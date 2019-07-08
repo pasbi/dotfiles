@@ -5,3 +5,5 @@ redshift-gtk &
 xbindkeys &
 
 xinput --disable $(xinput --list | grep TouchPad | sed -e 's/.*id=//' -e 's/\s.*//')
+
+xsetroot -solid "#000000"
