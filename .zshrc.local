@@ -1,0 +1,50 @@
+#!/bin/bash
+
+export EDITOR=vim
+#export CDPATH=/media/Volume/Safe/UdS
+# alias pdf='evince 2>/dev/null'
+alias pdf='zathura'
+alias sshadd='ssh-add ~/.ssh/id_rsa'
+#alias meld='meld 2>/dev/null'
+alias am='alsamixer'
+alias pv='pavucontrol'
+alias sxc='xclip -selection c'
+alias gxc='xclip -selection c -o'
+alias p='python -ic "import numpy as np; import sys; import os; print(sys.version)"'
+alias p3='python3 -ic "import numpy as np; import sys; import os; import json; import math; print(sys.version)"'
+alias p2='python2 -ic "import numpy as np; import sys; import os; import json; import math; print(sys.version)"'
+alias vim=nvim
+alias ccat='pygmentize -g'
+alias q='subl'
+alias pvv='/home/pascal/Applications/pvv/build/src/pvv'
+alias arandr='arandr; rmdir ~/.screenlayout 2>/dev/null;'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias config='/usr/bin/env git  --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+export GLOG_logtostderr=1
+
+# make cd -P persistent
+set -o physical
+
+export PATH=$HOME/.local/adb-fastboot/platform-tools:$PATH
+
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+
+# adds the file $1 to the .gitinore
+gitignore(){
+	relpath(){ python3 -c "import os.path; print(os.path.relpath('$1','${2:-$PWD}'))" ; }
+	cvsPath=$(git rev-parse --show-toplevel)
+	filename=$(relpath $1 $cvsPath)
+	echo $filename >> $cvsPath/.gitignore
+}
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+# apply wal's color scheme to new terminals
+cat ~/.cache/wal/sequences
