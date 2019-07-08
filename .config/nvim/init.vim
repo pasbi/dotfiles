@@ -58,6 +58,7 @@ autocmd BufEnter,WinEnter,FileType *.cpp,*.h,.py set colorcolumn=100
 map <F4> :w<CR>:call CurtineIncSw()<CR>
 
 " set number relativenumber
+set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
