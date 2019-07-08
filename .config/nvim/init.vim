@@ -23,6 +23,7 @@ let g:NERDToggleCheckAllLines = 1
 
 Plugin 'ericcurtin/CurtineIncSw.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'dylanaraps/wal.vim'
 
 " markdown syntax
 Plugin 'godlygeek/tabular'
@@ -33,10 +34,10 @@ call vundle#end()
 
 filetype plugin on
 
-colorscheme monokai
+"colorscheme monokai
 syntax on
 
-inoremap <C-j> <Esc>/<++><Enter>"_c5l
+inoremap <C-j> <Esc>/<Enter>"_c5l
 inoremap jj <Esc>:up<CR>
 
 let g:Tex_CompileRule_pdf = 'lualatex -synctex=1 -interaction=nonstopmode $*'
@@ -70,23 +71,25 @@ match ExtraWhitespace /\s\+$/
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-function! DelTagOfFile(file)
-  let fullpath = a:file
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let f = substitute(fullpath, cwd . "/", "", "")
-  let f = escape(f, './')
-  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
-  let resp = system(cmd)
-endfunction
-
-function! UpdateTags()
-  let f = expand("%:p")
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
-  call DelTagOfFile(f)
-  let resp = system(cmd)
-endfunction
+" function! DelTagOfFile(file)
+"   let fullpath = a:file
+"   let cwd = getcwd()
+"   let tagfilename = cwd . "/tags"
+"   let f = substitute(fullpath, cwd . "/", "", "")
+"   let f = escape(f, './')
+"   let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+"   let resp = system(cmd)
+" endfunction
+" 
+" function! UpdateTags()
+"   let f = expand("%:p")
+"   let cwd = getcwd()
+"   let tagfilename = cwd . "/tags"
+"   let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+"   call DelTagOfFile(f)
+"   let resp = system(cmd)
+" endfunction
 autocmd BufWritePost *.cpp,*.h,*.c,*.py,*.tex call UpdateTags()
+
+colorscheme wal
 

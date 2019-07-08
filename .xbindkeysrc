@@ -29,6 +29,9 @@
 "$HOME/.scripts/manual-select-monitor-config.sh"
   Shift+Mod4+a
 
+"$HOME/.scripts/color.sh"
+  Shift+Mod4+u
+
 "localc /home/pascal/.timesheet/201907.ods"
   Shift+Mod4+s
 
