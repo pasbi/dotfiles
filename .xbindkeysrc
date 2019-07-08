@@ -1,0 +1,44 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+
+# Increase volume
+"pactl set-sink-volume 0 +1000"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume 0 -1000"
+   XF86AudioLowerVolume
+
+"/home/pascal/.scripts/brightness.py inc"
+	XF86MonBrightnessUp
+
+"/home/pascal/.scripts/brightness.py dec"
+	XF86MonBrightnessDown
+
+"exec firefox"
+  Mod4+i
+
+"exec thunderbird"
+  Mod4+t
+
+"/home/pascal/.scripts/suspend.sh"
+  Shift+Mod4+z
+
+"$HOME/.scripts/manual-select-monitor-config.sh"
+  Shift+Mod4+a
+
+"localc /home/pascal/.timesheet/201907.ods"
+  Shift+Mod4+s
+
+"QT_ASSUME_STDERR_HAS_CONSOLE=1 exec /usr/bin/qtcreator"
+  Mod4+q
+
+# "exec terminator --profile=night"
+"exec st"
+  m:0x40 + c:36
+
+##################################
+# End of xbindkeys configuration #
+##################################
