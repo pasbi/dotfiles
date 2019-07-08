@@ -1,2 +1,10 @@
 # dotfiles
-my dotfiles
+
+Uses the approach described [here](https://news.ycombinator.com/item?id=11070797) to avoid having a `$HOME/.git` directory:
+
+
+    git init --bare $HOME/.myconf
+    alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+    config config status.showUntrackedFiles no
+    
+ 
