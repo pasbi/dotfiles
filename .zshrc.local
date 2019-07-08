@@ -17,7 +17,6 @@ alias vim=nvim
 alias ccat='pygmentize -g'
 alias q='subl'
 alias pvv='/home/pascal/Applications/pvv/build/src/pvv'
-alias arandr='arandr; rmdir ~/.screenlayout 2>/dev/null;'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias config='/usr/bin/env git  --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
