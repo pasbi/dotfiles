@@ -89,7 +89,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "   call DelTagOfFile(f)
 "   let resp = system(cmd)
 " endfunction
-autocmd BufWritePost *.cpp,*.h,*.c,*.py,*.tex call UpdateTags()
+" autocmd BufWritePost *.cpp,*.h,*.c,*.py,*.tex call UpdateTags()
 
 colorscheme wal
 
