@@ -66,6 +66,7 @@ set autoindent
 set smartindent
 set mouse=a
 set autoread
+set softtabstop=2
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

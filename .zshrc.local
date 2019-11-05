@@ -20,6 +20,7 @@ alias pvv='/home/pascal/Applications/pvv/build/src/pvv'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias config='/usr/bin/env git  --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias unpd='$HOME/.scripts/unpd.sh'
 
 export GLOG_logtostderr=1
 
@@ -47,3 +48,9 @@ fi
 
 # apply wal's color scheme to new terminals
 cat ~/.cache/wal/sequences
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line

@@ -1,7 +1,7 @@
 nm-applet &
 telegram-desktop -startintray &
 /usr/lib/geoclue-2.0/demos/agent &
-redshift-gtk &
+redshift-gtk -l6:49 &
 xbindkeys &
 
 xinput --disable $(xinput --list | grep TouchPad | sed -e 's/.*id=//' -e 's/\s.*//')
