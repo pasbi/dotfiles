@@ -3,6 +3,7 @@ telegram-desktop -startintray &
 /usr/lib/geoclue-2.0/demos/agent &
 redshift-gtk -l6:49 &
 xbindkeys &
+riot-desktop &
 
 xinput --disable $(xinput --list | grep TouchPad | sed -e 's/.*id=//' -e 's/\s.*//')
 
