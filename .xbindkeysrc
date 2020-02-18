@@ -32,7 +32,7 @@
 "$HOME/.scripts/color.sh"
   Shift+Mod4+u
 
-"localc /media/Volume/timesheet/201911.ods"
+"localc /media/Volume/nc/timesheet/202002.ods"
   Shift+Mod4+s
 
 "QT_ASSUME_STDERR_HAS_CONSOLE=1 exec /usr/bin/qtcreator"
