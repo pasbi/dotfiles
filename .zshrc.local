@@ -28,8 +28,7 @@ export GLOG_logtostderr=1
 set -o physical
 
 export PATH=$HOME/.local/adb-fastboot/platform-tools:$PATH
-
-LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+eval "$(dircolors ~/.dircolors)";
 
 # adds the file $1 to the .gitinore
 gitignore(){
