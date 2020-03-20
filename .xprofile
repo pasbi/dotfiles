@@ -4,9 +4,11 @@ telegram-desktop -startintray &
 redshift-gtk -l6:49 &
 xbindkeys &
 riot-desktop &
+nextcloud &
 
 xinput --disable $(xinput --list | grep TouchPad | sed -e 's/.*id=//' -e 's/\s.*//')
 
 xsetroot -solid "#000000"
 
 PATH=$PATH:/home/pascal/.local/bin
+

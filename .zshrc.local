@@ -3,7 +3,7 @@
 export EDITOR=vim
 #export CDPATH=/media/Volume/Safe/UdS
 # alias pdf='evince 2>/dev/null'
-alias pdf='zathura'
+alias pdf='zathura 2>/dev/null 1>/dev/null'
 alias sshadd='ssh-add ~/.ssh/id_rsa'
 #alias meld='meld 2>/dev/null'
 alias am='alsamixer'
